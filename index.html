@@ -404,7 +404,8 @@
 
   .faculty-photo {
     width: 100%;
-    height: 160px;
+    aspect-ratio: 4 / 3;
+    max-height: 300px;
     object-fit: cover;
     object-position: top center;
     display: block;
@@ -413,7 +414,7 @@
 
   .faculty-photo-placeholder {
     width: 100%;
-    height: 160px;
+    aspect-ratio: 4 / 3;
     background: var(--lama-dark);
     display: flex;
     align-items: center;
@@ -658,198 +659,26 @@
 
   @media (max-width: 700px) {
     .cover-inner, section, .urgency, .faculty-section, .cta-section, .footer, .alumni-section { padding: 40px 28px; }
-    .challenge-grid, .module-grid, .corporate-grid, .faculty-grid, .format-row, .timeline-row, .alumni-grid { grid-template-columns: 1fr; }
+    .challenge-grid, .module-grid, .corporate-grid, .format-row, .timeline-row, .alumni-grid { grid-template-columns: 1fr; }
+    .faculty-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .faculty-photo, .faculty-photo-placeholder { aspect-ratio: 1 / 1; max-height: none; }
     .testimonial-inner { grid-template-columns: 1fr; }
     .cover-footer { grid-template-columns: 1fr; }
     .pull-quote-section { padding: 48px 28px; }
     .testimonial-strip { padding: 48px 28px; }
   }
 
-  /* ─── NAVBAR ─── */
-  #site-nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 9999;
-    background: var(--lama);
-    box-shadow: 0 2px 24px rgba(98,13,60,.35);
-    border-bottom: 2px solid var(--marigold);
-    font-family: 'Public Sans', sans-serif;
-  }
-
-  .nav-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    height: 56px;
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
-
-  .nav-logo-text {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .06em;
-    color: #fff;
-    white-space: nowrap;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    list-style: none;
-    margin: 0; padding: 0;
-  }
-
-  .nav-link {
-    display: block;
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: .04em;
-    color: rgba(255,255,255,.75);
-    text-decoration: none;
-    padding: 6px 10px;
-    border-radius: 3px;
-    transition: background .18s, color .18s;
-    white-space: nowrap;
-  }
-
-  .nav-link:hover,
-  .nav-link.active {
-    background: rgba(241,162,34,.15);
-    color: var(--marigold);
-  }
-
-  .nav-cta {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--lama);
-    background: var(--marigold);
-    text-decoration: none;
-    padding: 7px 16px;
-    border-radius: 2px;
-    margin-left: 8px;
-    transition: background .18s, transform .15s;
-    white-space: nowrap;
-  }
-
-  .nav-cta:hover {
-    background: var(--nimbu);
-    transform: translateY(-1px);
-  }
-
-  /* Hamburger */
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-  }
-
-  .nav-hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--marigold);
-    transition: transform .25s, opacity .25s;
-  }
-
-  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  /* Offset all sections so navbar doesn't cover headings */
-  section[id], div[id] {
-    scroll-margin-top: 60px;
-  }
-
-  /* Push page content below fixed nav */
-  .page {
-    margin-top: 56px;
-  }
-
-  @media (max-width: 700px) {
-    .nav-hamburger { display: flex; }
-
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 56px; left: 0; right: 0;
-      background: var(--lama-dark);
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-      padding: 8px 0 12px;
-      border-bottom: 2px solid var(--marigold);
-      box-shadow: 0 8px 24px rgba(0,0,0,.3);
-    }
-
-    .nav-links.open { display: flex; }
-
-    .nav-link {
-      padding: 12px 24px;
-      border-radius: 0;
-      font-size: 13px;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-
-    .nav-cta {
-      margin: 12px 24px 0;
-      text-align: center;
-      padding: 10px 16px;
-      border-radius: 2px;
-    }
+  @media (max-width: 420px) {
+    .faculty-grid { grid-template-columns: 1fr; }
+    .faculty-photo, .faculty-photo-placeholder { aspect-ratio: 4 / 3; }
   }
 </style>
 </head>
 <body>
-
-  <!-- ─── STICKY NAVBAR ─── -->
-  <nav id="site-nav">
-    <div class="nav-inner">
-      <a href="#home" class="nav-logo">
-        <svg viewBox="0 0 32 32" fill="none" width="22" height="22">
-          <circle cx="16" cy="16" r="12" stroke="#f1a222" stroke-width="1.5"/>
-          <path d="M10 22L16 10L22 22M13 18H19" stroke="#f1a222" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <span class="nav-logo-text">Takshashila PGP</span>
-      </a>
-      <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#overview" class="nav-link">Overview</a></li>
-        <li><a href="#business-case" class="nav-link">Why Policy</a></li>
-        <li><a href="#advantage" class="nav-link">Advantage</a></li>
-        <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
-        <li><a href="#faculty" class="nav-link">Faculty</a></li>
-        <li><a href="#alumni" class="nav-link">Alumni</a></li>
-        <li><a href="#corporate" class="nav-link">Corporate</a></li>
-        <li><a href="#fees" class="nav-link">Fees &amp; Dates</a></li>
-        <li><a href="#apply" class="nav-cta">Apply Now</a></li>
-      </ul>
-    </div>
-  </nav>
-
 <div class="page">
 
   <!-- COVER -->
-  <div class="cover" id="home">
+  <div class="cover">
     <div class="cover-noise"></div>
     <div class="cover-grid"></div>
     <div class="cover-accent"></div>
@@ -897,7 +726,7 @@
   </div>
 
   <!-- OPENING -->
-  <section id="overview">
+  <section>
     <div class="section-label">To the Board &amp; Executive Leadership</div>
     <h2 class="section-title">The Rules of the Game<br>Have <em>Changed</em></h2>
     <div class="gold-rule"></div>
@@ -915,7 +744,7 @@
   </section>
 
   <!-- CHALLENGES -->
-  <div class="urgency" id="business-case">
+  <div class="urgency">
     <div class="section-label">The Business Case</div>
     <h2 class="section-title">Why Policy Literacy<br>Is a Competitive Advantage</h2>
     <p class="body-text" style="margin-top:20px">
@@ -947,14 +776,14 @@
   </div>
 
   <!-- PULL QUOTE -->
-  <div class="pull-quote-section" id="quote">
+  <div class="pull-quote-section">
     <p class="pull-quote">"A business leader who does not understand how policy is made is like a general who does not understand terrain. The battlefield is the state, and its contours change constantly."</p>
     <div class="pull-quote-rule"></div>
     <div class="pull-quote-attr">Nitin Pai · Co-Founder &amp; Director, Takshashila Institution</div>
   </div>
 
   <!-- VALUE PROPS -->
-  <section id="advantage">
+  <section>
     <div class="section-label">The Takshashila Advantage</div>
     <h2 class="section-title">What Your Leaders<br><em>Will Gain</em></h2>
 
@@ -998,7 +827,7 @@
   </section>
 
   <!-- CURRICULUM -->
-  <section class="curriculum" id="curriculum">
+  <section class="curriculum">
     <div class="section-label">Programme Structure</div>
     <h2 class="section-title">Curriculum Modules of<br><em>Direct Corporate Relevance</em></h2>
     <p class="curriculum-intro">Spanning three terms across 48 weeks, the PGP is delivered via live &amp; interactive online sessions and three in-person workshops across India. Below are the modules most directly applicable to corporate and boardroom decision-making.</p>
@@ -1088,7 +917,7 @@
   </section>
 
   <!-- FORMAT -->
-  <section style="background:#fff;" id="delivery">
+  <section style="background:#fff;">
     <div class="section-label">Delivery Model</div>
     <h2 class="section-title">Built for <em>Working Leaders</em></h2>
     <p class="body-text">The programme is intentionally designed so that executives can maintain full professional responsibilities while completing their studies. All live sessions are scheduled to minimise business-day disruption.</p>
@@ -1118,7 +947,7 @@
   </section>
 
   <!-- FACULTY -->
-  <div class="faculty-section" id="faculty">
+  <div class="faculty-section">
     <div class="section-label">Faculty</div>
     <h2 class="section-title">Taught by Scholar-Practitioners,<br>Not Academics</h2>
 
@@ -1199,7 +1028,7 @@
   </div>
 
   <!-- ALUMNI -->
-  <div class="alumni-section" id="alumni">
+  <div class="alumni-section">
     <div class="section-label">Notable Alumni</div>
     <h2 class="section-title">Leaders Who Have<br><em>Gone Through the Programme</em></h2>
     <p class="body-text">Our alumni span government, corporate leadership, civil society, and research — a testament to the programme's cross-sectoral impact.</p>
@@ -1236,7 +1065,7 @@
   </div>
 
   <!-- TESTIMONIALS -->
-  <div class="testimonial-strip" id="testimonials">
+  <div class="testimonial-strip">
     <div class="section-label" style="margin-bottom:36px">Participant Voice</div>
     <div class="testimonial-inner">
       <div class="testimonial">
@@ -1253,7 +1082,7 @@
   </div>
 
   <!-- CORPORATE PROPOSAL -->
-  <section class="corporate" id="corporate">
+  <section class="corporate">
     <div class="section-label">Corporate Sponsorship Proposal</div>
     <h2 class="section-title">A Strategic Investment in<br><em>Executive Capability</em></h2>
     <p class="body-text">We propose a structured corporate sponsorship arrangement for organisations seeking to build sustained policy intelligence capacity at the senior level. Below is a framework for engagement.</p>
@@ -1285,7 +1114,7 @@
   </section>
 
   <!-- PRICING -->
-  <section class="pricing" id="fees">
+  <section class="pricing">
     <div class="section-label">Investment &amp; Next Steps</div>
     <h2 class="section-title">Programme <em>Fee Structure</em></h2>
     <p class="body-text">The PGP is available for individual enrolment and corporate sponsorship. For organisations sponsoring multiple participants, we invite a direct conversation with the Takshashila Policy School team regarding customised cohort or partnership arrangements.</p>
@@ -1367,7 +1196,7 @@
   </section>
 
   <!-- CTA -->
-  <div class="cta-section" id="apply">
+  <div class="cta-section">
     <div class="cta-label">Take the Next Step</div>
     <h2 class="cta-title">
       Start Your Policy <em>Leadership</em><br>Journey With Us
@@ -1393,51 +1222,5 @@
   </div>
 
 </div>
-
-  <script>
-    // Hamburger toggle
-    const toggle = document.getElementById('nav-toggle');
-    const links  = document.getElementById('nav-links');
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      links.classList.toggle('open');
-    });
-
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-link, .nav-cta').forEach(a => {
-      a.addEventListener('click', () => {
-        toggle.classList.remove('open');
-        links.classList.remove('open');
-      });
-    });
-
-    // Active link highlighting on scroll
-    const sections = document.querySelectorAll('section[id], div[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-20% 0px -75% 0px' });
-
-    sections.forEach(s => observer.observe(s));
-
-    // Smooth scroll polyfill for wkhtmltopdf (no-op in browser with CSS)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
-
 </body>
 </html>
