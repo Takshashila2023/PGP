@@ -24,7 +24,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 44px; }
 
   body {
     font-family: 'Public Sans', sans-serif;
@@ -689,13 +689,75 @@
     .faculty-grid { grid-template-columns: 1fr; }
     .faculty-photo, .faculty-photo-placeholder { aspect-ratio: 4 / 3; }
   }
+
+  /* ─── NAV BAR ─── */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: var(--lama-dark);
+    border-bottom: 1px solid rgba(241,162,34,.2);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-nav::-webkit-scrollbar { display: none; }
+
+  .site-nav a {
+    flex-shrink: 0;
+    padding: 14px 18px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+  }
+
+  .site-nav a:hover { color: rgba(255,255,255,.85); }
+
+  .site-nav a.active {
+    color: var(--marigold);
+    border-bottom-color: var(--marigold);
+  }
+
+  .site-nav a.nav-cta {
+    margin-left: auto;
+    color: var(--marigold);
+    background: rgba(241,162,34,.08);
+    border-left: 1px solid rgba(241,162,34,.2);
+  }
+
+  .site-nav a.nav-cta:hover { background: rgba(241,162,34,.15); color: var(--marigold); }
+
+  @media (max-width: 700px) {
+    .site-nav a { padding: 12px 14px; font-size: 10px; }
+  }
 </style>
 </head>
 <body>
 <div class="page">
 
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="#overview">Overview</a>
+    <a href="#case">The Case</a>
+    <a href="#outcomes">Outcomes</a>
+    <a href="#curriculum">Curriculum</a>
+    <a href="#format">Format</a>
+    <a href="#faculty">Faculty</a>
+    <a href="#alumni">Alumni</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#enroll" class="nav-cta">Enroll</a>
+  </nav>
+
   <!-- COVER -->
-  <div class="cover">
+  <div id="overview" class="cover">
     <div class="cover-noise"></div>
     <div class="cover-grid"></div>
     <div class="cover-accent"></div>
@@ -762,7 +824,7 @@
   </section>
 
   <!-- CHALLENGES -->
-  <div class="urgency">
+  <div id="case" class="urgency">
     <div class="section-label">The Business Case</div>
     <h2 class="section-title">Why Policy Literacy<br>Is a Competitive Advantage</h2>
     <p class="body-text" style="margin-top:20px">
@@ -801,7 +863,7 @@
   </div>
 
   <!-- VALUE PROPS -->
-  <section>
+  <section id="outcomes">
     <div class="section-label">The Takshashila Advantage</div>
     <h2 class="section-title">What Your Leaders<br><em>Will Gain</em></h2>
 
@@ -845,7 +907,7 @@
   </section>
 
   <!-- CURRICULUM -->
-  <section class="curriculum">
+  <section id="curriculum" class="curriculum">
     <div class="section-label">Programme Structure</div>
     <h2 class="section-title">Curriculum Modules of<br><em>Direct Corporate Relevance</em></h2>
     <p class="curriculum-intro">Spanning three terms across 48 weeks, the PGP is delivered via live &amp; interactive online sessions and three in-person workshops across India. Below are the modules most directly applicable to corporate and boardroom decision-making.</p>
@@ -935,7 +997,7 @@
   </section>
 
   <!-- FORMAT -->
-  <section style="background:#fff;">
+  <section id="format" style="background:#fff;">
     <div class="section-label">Delivery Model</div>
     <h2 class="section-title">Built for <em>Working Leaders</em></h2>
     <p class="body-text">The programme is intentionally designed so that executives can maintain full professional responsibilities while completing their studies. All live sessions are scheduled to minimise business-day disruption.</p>
@@ -965,7 +1027,7 @@
   </section>
 
   <!-- FACULTY -->
-  <div class="faculty-section">
+  <div id="faculty" class="faculty-section">
     <div class="section-label">Faculty</div>
     <h2 class="section-title">Taught by Scholar-Practitioners,<br>Not Academics</h2>
 
@@ -1046,7 +1108,7 @@
   </div>
 
   <!-- ALUMNI -->
-  <div class="alumni-section">
+  <div id="alumni" class="alumni-section">
     <div class="section-label">Notable Alumni</div>
     <h2 class="section-title">Leaders Who Have<br><em>Gone Through the Programme</em></h2>
     <p class="body-text">Our alumni span government, corporate leadership, civil society, and research — a testament to the programme's cross-sectoral impact.</p>
@@ -1132,7 +1194,7 @@
   </section>
 
   <!-- PRICING -->
-  <section class="pricing">
+  <section id="pricing" class="pricing">
     <div class="section-label">Investment &amp; Next Steps</div>
     <h2 class="section-title">Programme <em>Fee Structure</em></h2>
     <p class="body-text">The PGP is available for individual enrolment and corporate sponsorship. For organisations sponsoring multiple participants, we invite a direct conversation with the Takshashila Policy School team regarding customised cohort or partnership arrangements.</p>
@@ -1214,7 +1276,7 @@
   </section>
 
   <!-- CTA -->
-  <div class="cta-section">
+  <div id="enroll" class="cta-section">
     <div class="cta-label">Take the Next Step</div>
     <h2 class="cta-title">
       Start Your Policy <em>Leadership</em><br>Journey With Us
@@ -1240,5 +1302,27 @@
   </div>
 
 </div>
+
+<script>
+  const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+  const sections = Array.from(navLinks)
+    .map(l => document.querySelector(l.getAttribute('href')))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.site-nav a[href="#${entry.target.id}"]`);
+        if (link) {
+          link.classList.add('active');
+          link.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }
+      }
+    });
+  }, { rootMargin: '-10% 0px -80% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
 </body>
 </html>
