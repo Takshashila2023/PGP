@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api:*)",
+      "Bash(curl --version 2>&1 | head -1)",
+      "Bash(curl -s https://api.github.com/repos/Carl-Jaison/PGP | grep -E '\"private\"|\"visibility\"')",
+      "Bash(curl -s https://api.github.com/repos/Carl-Jaison/PGP/pages 2>&1)",
+      "Bash(curl -s https://api.github.com/repos/Carl-Jaison/PGP/actions/runs?per_page=3 | grep -E '\"status\"|\"conclusion\"|\"name\"|\"html_url\"' | head -20)",
+      "Bash(cd \"C:/Users/Carl/Documents/PGP Website/PGP\" && curl -s -o /dev/null -w \"%{http_code}\" https://carl-jaison.github.io/PGP/IMG_76711.JPG)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://carl-jaison.github.io/PGP/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://carl-jaison.github.io/PGP/f60d772f-f462-47d7-9655-9f0d839d8c25.jpg)",
+      "Bash(curl -s \"https://api.github.com/repos/Carl-Jaison/PGP/contents/\" | grep -o '\"name\":\"[^\"]*\"')",
+      "Bash(curl -s \"https://api.github.com/repos/Carl-Jaison/PGP/git/trees/main?recursive=1\" | python -c \"import sys,json; data=json.load\\(sys.stdin\\); [print\\(i['path']\\) for i in data.get\\('tree',[]\\) if not i['path'].endswith\\('.html'\\) and not 'base64' in i.get\\('path',''\\)]\")",
+      "Bash(curl -s \"https://api.github.com/repos/Carl-Jaison/PGP/actions/runs?per_page=1\" | grep -o '\"status\":\"[^\"]*\"\\\\|\"conclusion\":\"[^\"]*\"\\\\|\"created_at\":\"[^\"]*\"' | head -5)",
+      "Bash(curl -s \"https://carl-jaison.github.io/PGP/IMG_76711.JPG\" -o /dev/null -w \"HTTP %{http_code} - size: %{size_download} bytes\")",
+      "Bash(curl -s -I \"https://raw.githubusercontent.com/Carl-Jaison/PGP/main/IMG_76711.JPG\" | grep \"HTTP\\\\|Content-Type\\\\|Content-Length\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://carl-jaison.github.io/PGP/IMG_76711.jpg\")",
+      "Bash(powershell.exe -File - << 'PWSH'\n$file = 'C:/Users/Carl/Documents/PGP Website/PGP/index.html'\n$content = Get-Content $file -Raw\n$pattern = '\\(?s\\)\\(<div class=\"faculty-card\">\\\\s*\\)<img class=\"faculty-photo\" src=\"data:image/jpeg;base64,[^\"]*\"[^>]*>\\(.*?<div class=\"faculty-name\">Karthik\\)'\n$replacement = '$1<img class=\"faculty-photo\" src=\"https://raw.githubusercontent.com/Carl-Jaison/PGP/main/Karthik%20Muralidharan.jpeg\" alt=\"Karthik Muralidharan\">$2Karthik'\n$content = [regex]::Replace\\($content, $pattern, $replacement, [System.Text.RegularExpressions.RegexOptions]::Singleline\\)\n[System.IO.File]::WriteAllText\\($file, $content, [System.Text.Encoding]::UTF8\\)\nWrite-Host \"Done\"\nPWSH)",
+      "Bash(powershell.exe -File - << 'PWSH'\n$file = 'C:/Users/Carl/Documents/PGP Website/PGP/index.html'\n$content = Get-Content $file -Raw\n\n# Fix Narayan - add object-position:center to img just before his faculty-info\n$content = [regex]::Replace\\($content, \n  '\\(?s\\)\\(<div class=\"faculty-card\">\\\\s*<img class=\"faculty-photo\"\\) \\(src=\"data:[^\"]*\"\\)\\(.*?<div class=\"faculty-name\">Narayan\\)',\n  '$1 style=\"object-position:center;\" $2$3Narayan',\n  [System.Text.RegularExpressions.RegexOptions]::Singleline\\)\n\n# Fix Shambhavi - same\n$content = [regex]::Replace\\($content,\n  '\\(?s\\)\\(<div class=\"faculty-card\">\\\\s*<img class=\"faculty-photo\"\\) \\(src=\"data:[^\"]*\"\\)\\(.*?<div class=\"faculty-name\">Dr\\\\. Shambhavi\\)',\n  '$1 style=\"object-position:center;\" $2$3Dr. Shambhavi',\n  [System.Text.RegularExpressions.RegexOptions]::Singleline\\)\n\n[System.IO.File]::WriteAllText\\($file, $content, [System.Text.Encoding]::UTF8\\)\nWrite-Host \"Done\"\nPWSH)",
+      "WebFetch(domain:takshashila.org.in)",
+      "Bash(ls \"C:\\\\Users\\\\Carl\\\\Documents\\\\PGP Website\\\\PGP\"/*.jpg \"C:\\\\Users\\\\Carl\\\\Documents\\\\PGP Website\\\\PGP\"/*.webp \"C:\\\\Users\\\\Carl\\\\Documents\\\\PGP Website\\\\PGP\"/*.JPG \"C:\\\\Users\\\\Carl\\\\Documents\\\\PGP Website\\\\PGP\"/*.jpeg 2>/dev/null | grep -i \"berry\\\\|devanahalli\\\\|mohanty\\\\|kak\\\\|lohia\\\\|das\\\\|IMG_3100\\\\|IMG_31\")"
+    ]
+  }
+}

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Takshashila PGP — Executive Programme Proposal</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -102,7 +103,7 @@
     position: absolute;
     top: 64px;
     right: 72px;
-    height: 48px;
+    height: 64px;
     width: auto;
   }
 
@@ -212,7 +213,7 @@
     font-weight: 500;
     letter-spacing: .2em;
     text-transform: uppercase;
-    color: rgba(255,255,255,.4);
+    color: rgba(255,255,255,.65);
     margin-top: 8px;
     display: block;
   }
@@ -288,7 +289,7 @@
 
   .challenge-card:hover { background: rgba(241,162,34,.07); }
 
-  .challenge-icon { font-size: 32px; margin-bottom: 18px; display: block; }
+  .challenge-icon { font-size: 28px; margin-bottom: 18px; display: block; color: #fff; }
 
   .challenge-title {
     font-family: 'Public Sans', sans-serif;
@@ -340,7 +341,7 @@
     font-family: 'Public Sans', sans-serif;
     font-size: 44px;
     font-weight: 200;
-    color: var(--lama-pale);
+    color: rgba(98,13,60,0.22);
     line-height: 1;
     padding-top: 4px;
   }
@@ -397,7 +398,7 @@
     border-top: 3px solid var(--lama);
   }
 
-  .format-icon { font-size: 34px; display: block; margin-bottom: 14px; }
+  .format-icon { font-size: 28px; display: block; margin-bottom: 14px; color: var(--lama); }
   .format-title { font-family: 'Public Sans', sans-serif; font-size: 15px; font-weight: 600; color: var(--lama); margin-bottom: 8px; }
   .format-detail { font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
 
@@ -430,8 +431,7 @@
   }
 
   /* Zoom out for Narayan (2nd) and Shambhavi (5th) */
-  .faculty-grid .faculty-card:nth-child(2) .faculty-photo,
-  .faculty-grid .faculty-card:nth-child(5) .faculty-photo { object-position: center; }
+  .faculty-grid .faculty-card:nth-child(2) .faculty-photo { object-position: center; }
 
   .faculty-photo-placeholder {
     width: 100%;
@@ -472,6 +472,14 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+  }
+
+  .alumni-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
   }
 
   .alumni-photo-placeholder {
@@ -757,11 +765,11 @@
     <a href="#case">The Case</a>
     <a href="#outcomes">Outcomes</a>
     <a href="#curriculum">Curriculum</a>
-    <a href="#format">Format</a>
+    <a href="#format">Pedagogy</a>
     <a href="#faculty">Faculty</a>
     <a href="#alumni">Alumni</a>
     <a href="#pricing">Pricing</a>
-    <a href="#enroll" class="nav-cta">Enroll</a>
+    <a href="#enroll" class="nav-cta">Enrol</a>
   </nav>
 
   <!-- COVER -->
@@ -771,16 +779,7 @@
     <div class="cover-accent"></div>
     <div class="cover-inner">
       <div class="cover-masthead">
-        <div class="masthead-seal">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-            <circle cx="16" cy="16" r="13" stroke="#f1a222" stroke-width="1.5"/>
-            <path d="M10 22 L16 10 L22 22 M13 18 H19" stroke="#f1a222" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div>
-          <span class="masthead-institution">The Takshashila Institution</span>
-          <span class="masthead-sub">India's Premier Independent Public Policy School · Est. 2010</span>
-        </div>
+        
         <img src="Takshashila Logo White Font Horizontal.png" alt="Takshashila Institution" class="cover-logo">
       </div>
 
@@ -792,7 +791,7 @@
           with Confidence
         </h1>
         <p class="cover-tagline">
-          A strategic education proposal for C-Suite and Board-Level Leaders to learn how to anticipate, influence, and respond effectively to the forces of government regulation, geopolitical disruption, and market change.
+          A strategic education proposal for senior to mid-level management and leadership teams to learn how to anticipate, influence, and respond effectively to the forces of government regulation, geopolitical disruption, and market change.
         </p>
       </div>
 
@@ -827,7 +826,7 @@
     </p>
     <br>
     <p class="body-text">
-      The Takshashila Institution's <strong>Post Graduate Programme in Public Policy (PGP)</strong> was designed precisely for this moment. We invite you to sponsor your senior executives and high-potential leaders through India's most rigorous practitioner-focused policy education.
+      The Takshashila Institution's <strong>Post Graduate Programme in Public Policy (PGP)</strong> was designed precisely for this moment. We invite you to enrol your executives in India's most rigorous practitioner-focused policy education.
     </p>
   </section>
 
@@ -836,7 +835,7 @@
     <div class="section-label">The Business Case</div>
     <h2 class="section-title">Why Policy Literacy<br>Is a Competitive Advantage</h2>
     <p class="body-text" style="margin-top:20px">
-      Executives who understand how governments think build companies that are resilient, credible, and strategically agile. Those who don't, wait for the newspaper.
+      Executives who understand how governments think build companies that are resilient, proactive, and strategically agile. Those who don't are caught on the back foot.
     </p>
 
     <div class="challenge-grid">
@@ -865,7 +864,7 @@
 
   <!-- PULL QUOTE -->
   <div class="pull-quote-section">
-    <p class="pull-quote">"A business leader who does not understand how policy is made is like a general who does not understand terrain. The battlefield is the state, and its contours change constantly."</p>
+    <p class="pull-quote">"A business leader equipped with policy knowledge is like a general who understands terrain. The battlefield is ever-changing, and its contours affect every aspect of business."</p>
     <div class="pull-quote-rule"></div>
     <div class="pull-quote-attr">Nitin Pai · Co-Founder &amp; Director, Takshashila Institution</div>
   </div>
@@ -917,8 +916,8 @@
   <!-- CURRICULUM -->
   <section id="curriculum" class="curriculum">
     <div class="section-label">Programme Structure</div>
-    <h2 class="section-title">Curriculum Modules of<br><em>Direct Corporate Relevance</em></h2>
-    <p class="curriculum-intro">Spanning three terms across 48 weekends, the PGP is delivered via live &amp; interactive online sessions and three in-person workshops across India. Below are the modules most directly applicable to corporate and boardroom decision-making.</p>
+    <h2 class="section-title"><em>Select</em> Modules</h2>
+    <p class="curriculum-intro">Spanning three terms across <strong>48 weekends</strong>, the PGP is delivered via <strong>live &amp; interactive online sessions</strong> and <strong>three in-person workshops</strong> across India.</p>
 
     <div class="module-grid">
       <div class="module-card">
@@ -1008,8 +1007,8 @@
   <!-- FORMAT -->
   <section id="format" style="background:#fff;">
     <div class="section-label">Delivery Model</div>
-    <h2 class="section-title">Built for <em>Working Leaders</em></h2>
-    <p class="body-text">The programme is intentionally designed to be hosted on weekends so that executives can maintain full professional responsibilities while completing their studies. All live sessions are scheduled to minimise business-day disruption and allow participants to follow-along easily with recordings if a class is missed.</p>
+    <h2 class="section-title">Unique Pedagogy &amp;<br><em>Teaching Focus</em></h2>
+    <p class="body-text">Our pedagogy is grounded in the Indian policy context and designed for professionals who need practical frameworks, not just theory.</p>
 
     <div class="format-row">
       <div class="format-box">
@@ -1056,7 +1055,7 @@
         </div>
       </div>
       <div class="faculty-card">
-        <img class="faculty-photo" style="object-position:center;" src="data:image/jpeg;base64,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" alt="Narayan Ramachandran">
+        <img class="faculty-photo" src="https://raw.githubusercontent.com/Carl-Jaison/PGP/main/NR-HI-RES%20-2%20(1).JPG" style="object-position:center top;" alt="Narayan Ramachandran">
         <div class="faculty-info">
           <div class="faculty-name">Narayan Ramachandran</div>
           <div class="faculty-role">Co-Founder · Former Morgan Stanley</div>
@@ -1096,7 +1095,7 @@
         </div>
       </div>
       <div class="faculty-card">
-        <img class="faculty-photo" src="Karthik Muralidharan.jpeg" alt="Karthik Muralidharan">
+        <img class="faculty-photo" src="Karthik Muralidharan.jpeg" alt="Karthik Muralidharan" style="object-position:top center;">
         <div class="faculty-info">
           <div class="faculty-name">Karthik Muralidharan</div>
           <div class="faculty-role">Tata Chancellor's Professor of Economics, UC San Diego</div>
@@ -1112,7 +1111,7 @@
         </div>
       </div>
       <div class="faculty-card">
-        <img class="faculty-photo" src="https://raw.githubusercontent.com/Carl-Jaison/PGP/main/Rajeswari.webp" alt="Dr. Rajeswari Sengupta">
+        <img class="faculty-photo" src="https://raw.githubusercontent.com/Carl-Jaison/PGP/main/Rajeswari.webp" alt="Dr. Rajeswari Sengupta" style="object-position:top center; object-fit:cover;">
         <div class="faculty-info">
           <div class="faculty-name">Dr. Rajeswari Sengupta</div>
           <div class="faculty-role">Associate Professor of Economics, IGIDR</div>
@@ -1131,30 +1130,74 @@
     <div class="alumni-grid">
       <div class="alumni-card">
         <div class="alumni-photo-wrap">
-          <div class="alumni-photo-placeholder">SB</div>
+          <img src="https://raw.githubusercontent.com/Carl-Jaison/PGP/main/Vice%20Admiral%20Suraj%20Berry.jpg" alt="Vice Admiral Suraj Berry" class="alumni-photo">
         </div>
         <div class="alumni-info">
-          <div class="alumni-name">Suraj Berry</div>
-          <div class="alumni-role">PGP Alumni</div>
+          <div class="alumni-name">Vice Admiral Suraj Berry</div>
+          <div class="alumni-role">Former Commander-in-Chief, Strategic Forces Command · PGP6</div>
         </div>
       </div>
       <div class="alumni-card">
         <div class="alumni-photo-wrap">
-          <div class="alumni-photo-placeholder">GD</div>
+          <img src="https://raw.githubusercontent.com/Carl-Jaison/PGP/main/Gopal%20Devanahalli.jpg" alt="Gopal Devanahalli" class="alumni-photo">
         </div>
         <div class="alumni-info">
           <div class="alumni-name">Gopal Devanahalli</div>
-          <div class="alumni-role">PGP Alumni</div>
+          <div class="alumni-role">President, Wadhwani Foundation · PGP2</div>
         </div>
       </div>
       <div class="alumni-card">
         <div class="alumni-photo-wrap">
-          <div class="alumni-photo-placeholder">SM</div>
+          <img src="https://raw.githubusercontent.com/Carl-Jaison/PGP/main/Subrat%20Mohanty.jpg" alt="Subrat Mohanty" class="alumni-photo">
         </div>
         <div class="alumni-info">
           <div class="alumni-name">Subrat Mohanty</div>
-          <div class="alumni-role">PGP Alumni</div>
+          <div class="alumni-role">Executive Director, Axis Bank · PGP4</div>
         </div>
+      </div>
+      <div class="alumni-card">
+        <div class="alumni-photo-wrap">
+          <img src="https://raw.githubusercontent.com/Carl-Jaison/PGP/main/Ashwin%20Kak.jpg" alt="Ashwin Kak" class="alumni-photo">
+        </div>
+        <div class="alumni-info">
+          <div class="alumni-name">Ashwin Kak</div>
+          <div class="alumni-role">Partner, Circular Economy at Intellecap · PGP7</div>
+        </div>
+      </div>
+      <div class="alumni-card">
+        <div class="alumni-photo-wrap">
+          <img src="https://raw.githubusercontent.com/Carl-Jaison/PGP/main/Yashika%20Lohia.jpg" alt="Yashika Lohia" class="alumni-photo">
+        </div>
+        <div class="alumni-info">
+          <div class="alumni-name">Yashika Lohia</div>
+          <div class="alumni-role">Audit and Assurance Analyst, Deloitte · PGP8</div>
+        </div>
+      </div>
+      <div class="alumni-card">
+        <div class="alumni-photo-wrap">
+          <img src="https://raw.githubusercontent.com/Carl-Jaison/PGP/main/Shilpi%20Das.webp" alt="Shilpi Das" class="alumni-photo">
+        </div>
+        <div class="alumni-info">
+          <div class="alumni-name">Shilpi Das</div>
+          <div class="alumni-role">Associate Director, Cognizant · PGP8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testimonial-strip">
+    <div class="section-label" style="margin-bottom:36px">Testimonials</div>
+    <div class="testimonial-inner">
+      <div class="testimonial">
+        <p class="testimonial-text">"This programme gave me the language to engage meaningfully with regulators — not just our legal team's checklist, but an actual understanding of why rules are drafted the way they are."</p>
+        <div class="testimonial-attr">Senior Director, Strategy</div>
+        <div class="testimonial-org">Technology Sector · PGP Alumnus</div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"When tariff changes hit our supply chain last year, I was the only person in the room who could contextualise it. That directly came from Takshashila's geopolitics curriculum."</p>
+        <div class="testimonial-attr">VP, Global Supply Chain</div>
+        <div class="testimonial-org">Manufacturing Sector · PGP Alumnus</div>
       </div>
     </div>
   </div>
@@ -1171,55 +1214,6 @@
     </div>
   </div>
 
-  <!-- TESTIMONIALS -->
-  <div class="testimonial-strip">
-    <div class="section-label" style="margin-bottom:36px">Participant Voice</div>
-    <div class="testimonial-inner">
-      <div class="testimonial">
-        <p class="testimonial-text">"This programme gave me the language to engage meaningfully with regulators — not just our legal team's checklist, but an actual understanding of why rules are drafted the way they are."</p>
-        <div class="testimonial-attr">Senior Director, Strategy</div>
-        <div class="testimonial-org">Technology Sector · PGP Alumnus</div>
-      </div>
-      <div class="testimonial">
-        <p class="testimonial-text">"When tariff changes hit our supply chain last year, I was the only person in the room who could contextualise it. That directly came from Takshashila's geopolitics curriculum."</p>
-        <div class="testimonial-attr">VP, Global Supply Chain</div>
-        <div class="testimonial-org">Manufacturing Sector · PGP Alumnus</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CORPORATE PROPOSAL -->
-  <section class="corporate">
-    <div class="section-label">Corporate Sponsorship Proposal</div>
-    <h2 class="section-title">A Strategic Investment in<br><em>Executive Capability</em></h2>
-    <p class="body-text">We propose a structured corporate sponsorship arrangement for organisations seeking to build sustained policy intelligence capacity at the senior level. Below is a framework for engagement.</p>
-
-    <div class="corporate-grid">
-      <div>
-        <div class="corp-section-title">Ideal Sponsorship Profiles</div>
-        <ul class="corp-list">
-          <li>Chief Strategy Officer or Head of Corporate Affairs seeking structured grounding in policy frameworks</li>
-          <li>CFO or Head of Investor Relations navigating fiscal and regulatory disclosure requirements</li>
-          <li>CEO of a regulated business (BFSI, pharma, energy, telecom) building direct regulator relationships</li>
-          <li>CHRO tasked with workforce policy, labour law, and state-level compliance complexity</li>
-          <li>Board Director on audit, risk, or compliance committees requiring policy oversight capability</li>
-          <li>High-potential (VP-level) leader identified for succession to C-suite</li>
-        </ul>
-      </div>
-      <div>
-        <div class="corp-section-title">Organisational Benefits</div>
-        <ul class="corp-list">
-          <li>Early warning intelligence on regulatory shifts in your sector</li>
-          <li>Credible, evidence-based government affairs and lobbying capability</li>
-          <li>Reduced policy risk through better anticipation and planning cycles</li>
-          <li>Access to Takshashila's network of current and former government officials</li>
-          <li>Strengthened board-level governance through policy-literate directors</li>
-          <li>Reputation as a credible, constructive policy actor in your industry</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- PRICING -->
   <section id="pricing" class="pricing">
     <div class="section-label">Investment &amp; Next Steps</div>
@@ -1229,12 +1223,6 @@
     <!-- KEY DATES TIMELINE -->
     <h3 style="font-family:'Public Sans',sans-serif; font-size:18px; font-weight:500; color:var(--lama); margin-top:48px; margin-bottom:0;">Key <em style="font-style:italic;color:var(--marigold);">Dates</em> · June 2026 Cohort</h3>
     <div class="timeline-row">
-      <div class="timeline-item">
-        <div class="timeline-num"></div>
-        <div class="timeline-date">01 May 2026</div>
-        <div class="timeline-event">Early Bird Deadline</div>
-        <p class="timeline-detail">10% scholarship for applications received by this date</p>
-      </div>
       <div class="timeline-item">
         <div class="timeline-num"></div>
         <div class="timeline-date">01 June 2026</div>
@@ -1272,13 +1260,8 @@
           <td><span class="badge">10th Cohort</span></td>
         </tr>
         <tr>
-          <td class="td-highlight"><strong>Early Bird Scholarship</strong></td>
-          <td>10% scholarship for applications by 1 May 2026</td>
-          <td>Rolling admissions — early advantage</td>
-        </tr>
-        <tr>
           <td class="td-highlight"><strong>Duration</strong></td>
-          <td>48 weeks · Three academic terms of 14 weeks each</td>
+          <td>48 weekends · Three academic terms of 14 weeks each</td>
           <td>With 2–3 week breaks between terms</td>
         </tr>
         <tr>
@@ -1293,7 +1276,7 @@
         </tr>
         <tr>
           <td class="td-highlight"><strong>Eligibility</strong></td>
-          <td>Any undergraduate degree; 8+ years work experience</td>
+          <td>Any undergraduate degree; 3+ years work experience</td>
           <td>Interview-based selection process</td>
         </tr>
       </tbody>
